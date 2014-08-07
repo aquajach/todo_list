@@ -1,0 +1,13 @@
+= form_for (@task) do |f|
+  = f.text_field :name
+  %br/
+  = f.select :due_date, %w(2014-08-01 2014-08-02 2014-08-03)
+  %br/
+  = f.submit
+  %br/
+  %br/
+- @tasks.each do |task|
+  %li
+    %span.task-name=task.name
+  %li
+    %span.task-due-date=task.due_date.strftime("%Y-%m-%d %A")
