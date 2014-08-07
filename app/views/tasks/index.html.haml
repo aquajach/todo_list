@@ -1,0 +1,17 @@
+%html
+  %head
+    %title
+  %form
+    %select#task_due_date
+    %input#task_name
+    %input{:type => "submit"}/
+  %ul
+  - @task.each do |task|
+    %li
+      .task-due-date
+        = task.due_date.strftime('%Y-%m-%d %A')
+    %li
+      .task-name
+        = task.name
+  %body
+    = yield
