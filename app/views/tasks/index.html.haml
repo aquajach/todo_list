@@ -1,0 +1,13 @@
+=form_for @new_task do |f|
+  =f.select :due_date, Task.all.map{|task|[task.due_date.strftime('%Y-%m-%d %A')]}
+  =f.text_field :name
+  %input{:type => "submit"}
+%ul
+- @task.each do |task|
+  %li
+    .task-due-date
+      = task.due_date.strftime('%Y-%m-%d %A')
+  %li
+    .task-name
+      = task.name
+  %br
