@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe 'Create tasks', type: :request do
+
   it 'creates a task from a form and display it into a list' do
     get '/tasks'
 
