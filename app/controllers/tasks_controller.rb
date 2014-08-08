@@ -2,6 +2,7 @@ class TasksController < ApplicationController
 
   def index
     @task = Task.all
+    @new_task = Task.new
   end
 
   def create
@@ -10,7 +11,7 @@ class TasksController < ApplicationController
 
     @task.submit! if params[:commit] == 'Submit'
 
-    redirect_to task_path(@task)
+    redirect_to tasks_path(@task)
 
   end
 
