@@ -1,0 +1,8 @@
+%form{"accept-charset" => "UTF-8", action: "/tasks/create", method: "post"}
+  %select#task_due_date
+  %input#task_name
+  %input{name: "commit", type: "submit", value: "Submit"}
+  %li
+    .task-due-date 2014-08-01 Friday
+  %li
+    .task-name A NEW TASK
